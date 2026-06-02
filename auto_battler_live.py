@@ -1031,6 +1031,14 @@ def main() -> None:
                 tela.fill((10, 10, 20)) # Fundo de espaço vazio
                 for ex, ey, er in estrelas:
                     pygame.draw.circle(tela, (255, 255, 255), (int(ex), int(ey)), int(er))
+            
+            # --- Marca d'Água ---
+            if not hasattr(main, "watermark_surf"):
+                fonte_wm = pygame.font.SysFont("arial", 40, bold=True)
+                main.watermark_surf = fonte_wm.render("AntiGravity / igorlima1992", True, (255, 255, 255))
+                main.watermark_surf.set_alpha(50) # Transparência
+            tela.blit(main.watermark_surf, (LARGURA // 2 - main.watermark_surf.get_width() // 2, ALTURA - 60))
+            # --------------------
 
             with lock_glads:
                 desenhar_cena(tela, gladiadores, fonte_hp, fonte_nome)
