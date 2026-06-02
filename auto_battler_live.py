@@ -1035,7 +1035,7 @@ def main() -> None:
             # --- Marca d'Água ---
             if not hasattr(main, "watermark_surf"):
                 fonte_wm = pygame.font.SysFont("arial", 40, bold=True)
-                main.watermark_surf = fonte_wm.render("AntiGravity / igorlima1992", True, (255, 255, 255))
+                main.watermark_surf = fonte_wm.render("@faustolima1503", True, (255, 255, 255))
                 main.watermark_surf.set_alpha(50) # Transparência
             tela.blit(main.watermark_surf, (LARGURA // 2 - main.watermark_surf.get_width() // 2, ALTURA - 60))
             # --------------------
